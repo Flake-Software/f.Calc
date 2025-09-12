@@ -1,25 +1,30 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
+plugins {
+    id "com.android.application"
+    id "org.jetbrains.kotlin.android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace "com.example.snowcalc"  // 👈 promeni na svoj paket!
+    compileSdkVersion 34
+    ndkVersion flutter.ndkVersion
+
+    defaultConfig {
+        applicationId "com.example.snowcalc" // 👈 promeni na svoj paket!
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
     }
-    dependencies {
-        classpath "com.android.tools.build:gradle:8.3.0"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22"
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+        }
     }
 }
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-rootProject.buildDir = "../build"
-subprojects {
-    project.buildDir = "root/f.SnowCalc"
-}
-subprojects {
-    project.evaluationDependsOn(":app")
+flutter {
+    source "../.."
 }
