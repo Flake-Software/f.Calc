@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.snowcalc"> <!-- 👈 promeni na svoj paket! -->
+    package="com.flake.snowcalc"> 
 
     <application
         android:label="SnowCalc"
@@ -23,3 +23,6 @@
 
     </application>
 </manifest>
+<meta-data
+        android:name="flutterEmbedding"
+        android:value="2" />
