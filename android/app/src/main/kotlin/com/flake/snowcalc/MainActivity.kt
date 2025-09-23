@@ -1,4 +1,4 @@
-package com.example.snowcalc  // 👈 promeni na svoj paket!
+package com.flake.snowcalc 
 
 import io.flutter.embedding.android.FlutterActivity
 
