@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    namespace "com.example.snowcalc"  // 👈 promeni na svoj paket!
+    namespace "com.flake.snowcalc"  // Changed from com.example.snowcalc
     compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
     defaultConfig {
-        applicationId "com.example.snowcalc" // 👈 promeni na svoj paket!
+        applicationId "com.flake.snowcalc" // Changed from com.example.snowcalc
         minSdkVersion 21
         targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
