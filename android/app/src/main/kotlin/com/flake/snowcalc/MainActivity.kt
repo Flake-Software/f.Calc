@@ -1,4 +1,4 @@
-package com.flake.snowcalc 
+package com.flake.snowcalc
 
 import io.flutter.embedding.android.FlutterActivity
 
