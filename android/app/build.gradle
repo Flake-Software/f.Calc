@@ -1,7 +1,6 @@
 plugins {
     id "com.android.application"
     id "kotlin-android"
-    // Novi način primene Flutter plugina
     id "dev.flutter.flutter-gradle-plugin"
 }
 
@@ -25,9 +24,9 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.flake.snowcalc"
-    // Hardkodujemo verzije jer novi plugin nekad ne prosledi na CI/CD-u
-    compileSdkVersion 34
-    ndkVersion "25.1.8937393" // Tipična verzija za Flutter 3.29
+    // MORA BITI 35 jer pluginovi to zahtevaju
+    compileSdk = 35
+    ndkVersion "25.1.8937393"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -45,7 +44,8 @@ android {
     defaultConfig {
         applicationId "com.flake.snowcalc"
         minSdkVersion 21
-        targetSdkVersion 34
+        // Target ostavi na 34 ili 35, ali compile mora 35
+        targetSdk = 35
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
