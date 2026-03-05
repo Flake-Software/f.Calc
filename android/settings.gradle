@@ -18,8 +18,8 @@ pluginManagement {
 
 plugins {
     id "dev.flutter.flutter-gradle-plugin" version "1.0.0" apply false
-    // Digli smo na 8.3.2 da podrži SDK 35
     id "com.android.application" version "8.3.2" apply false
+    // Ovde mora biti bar 1.9.22 za nove Flutter verzije
     id "org.jetbrains.kotlin.android" version "1.9.22" apply false
 }
 
