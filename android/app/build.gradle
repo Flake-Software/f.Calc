@@ -31,6 +31,8 @@ android {
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
+        // Ovo dodajemo da budemo sigurni da vidi Javu u kotlin folderu
+        main.java.srcDirs += 'src/main/java'
     }
 
     defaultConfig {
@@ -44,6 +46,9 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.debug
+            // Isključujemo kompresiju resursa koja nekad zeza na CI/CD
+            shrinkResources false
+            minifyEnabled false
         }
     }
 }
@@ -53,5 +58,6 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.22"
+    // Dodajemo ovo da bi Java/Kotlin imali osnovu
+    implementation "androidx.annotation:annotation:1.7.0"
 }
