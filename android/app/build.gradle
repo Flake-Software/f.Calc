@@ -17,7 +17,7 @@ def flutterVersionName = localProperties.getProperty('flutter.versionName') ?: '
 
 android {
     namespace "com.flake.snowcalc"
-    compileSdk 35 // Mora 35 zbog pluginova
+    compileSdk 35
     ndkVersion "25.1.8937393"
 
     compileOptions {
@@ -53,7 +53,5 @@ flutter {
 }
 
 dependencies {
-    // OVA LINIJA JE SPAS: Eksplicitno dodajemo Flutter embedding
-    implementation "io.flutter:flutter_embedding_release:1.0.0-+"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.22"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.22"
 }
